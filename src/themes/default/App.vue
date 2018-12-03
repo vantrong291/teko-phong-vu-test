@@ -10,9 +10,9 @@
 </template>
 
 <script>
-  import Navigation from "@@/components/shared/Navigation.vue";
-  import Footer from "@@/components/shared/Footer.vue";
-  import Sidebar from "@@/components/shared/Sidebar"
+  import Navigation from "@@/themes/default/components/shared/Navigation.vue";
+  import Footer from "@@/themes/default/components/shared/Footer.vue";
+  import Sidebar from "@@/themes/default/components/shared/Sidebar"
   export default {
     name: 'App',
     components: {
@@ -25,8 +25,8 @@
 
 <style>
   /*@import "./assets/css/font-awesome.css";*/
-  @import "./assets/css/phongvu-icon.css";
-  @import "./assets/css/main.css";
+  @import "../../assets/css/phongvu-icon.css";
+  @import "../../assets/css/main.css";
   @import url('https://fonts.googleapis.com/css?family=Muli');
   #app, body, html {
     font-family: Muli, sans-serif !important;
