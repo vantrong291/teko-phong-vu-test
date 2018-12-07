@@ -2,7 +2,7 @@
   <div id="app">
     <!--<sidebar></sidebar>-->
     <navigation></navigation>
-    <div id="main-app" style="margin-top: 118px">
+    <div id="main-app" class="container" style="margin-top: 118px">
       <router-view/>
     </div>
     <the-footer></the-footer>
@@ -35,8 +35,10 @@
   #app {
     font-family: Roboto, sans-serif;
   }
-  section {
-    padding-right: 24px;
-    padding-left: 24px;
+  .v-toolbar__content, .container {
+    max-width: 80%;
+    width: 80%;
+    margin: 0 auto;
   }
+
 </style>

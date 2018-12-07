@@ -121,13 +121,18 @@
           </ol>
         </div>
       </div>
-      <v-text-field
-        solo
-        label="Tìm kiếm"
-        append-icon="search"
-        class="mt-2 mx-3 w-25"
-      ></v-text-field>
-      <div class="col-xs-4 v3-header-right-block" style="height: 64px;">
+      <div class="w-50" style="position: relative">
+        <input type="text" class="search-input" data-search-engine="phongvu"
+               data-search-url="https://phongvu.vn/searchpves/"
+               data-get-search-suggestion-url="https://search.phongvu.vn/api/"
+               placeholder="Nhập tên sản phẩm, mã sản phẩm, từ khóa cần tìm...." value=""
+               style="background-color: #fff">
+        <span class="search-btn" data-search-url="https://phongvu.vn/searchpves/" title="Tìm kiếm sản phẩm"
+              style="background: none;">
+        <i class="pvi-icon_Search fa-pv-search" aria-hidden="true"></i>
+      </span>
+      </div>
+      <div class="col-xs-3 v3-header-right-block" style="height: 64px;">
         <div class="col-xs-4 v3-header-sale">
           <a class="v3-header-sale-item" target="_blank" href="#">
             <i class="v3-sale-icon pvi-Headericon_Promotion"></i>
@@ -136,8 +141,16 @@
             </div>
           </a>
         </div>
-
-        <div class="col-xs-4 v3-header-tracking-order">
+        <div class="col-xs-3 v3-header-login">
+          <div class="v3-header-login-item" @click="showLoginModal=true">
+            <i class="v3-user-icon pvi-icon_UserCircle"></i>
+            <div class="header-right-description">
+              <div class="header-login-register">Đăng nhập Đăng ký</div>
+              <div class="chat-sale-asia-code">Mã NV: <span></span></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-3 v3-header-tracking-order">
           <a class="v3-header-tracking-order-item" href="#" data-toggle="modal">
             <i class="v3-header-tracking-order-icon pvi-Headericon_TrackingOrder"></i>
             <div class="header-right-description">
@@ -145,7 +158,8 @@
             </div>
           </a>
         </div>
-        <div class="col-xs-4 v3-header-cart">
+
+        <div class="col-xs-2 v3-header-cart">
           <a class="header-cart-view-cart" href="#" title="Xem giỏ hàng">
             <i class="pvi-Headericon_Cart">
             </i>
@@ -155,47 +169,66 @@
       </div>
     </v-toolbar>
     <div class="row v3-content-section v3-header-navigation-content sub-nav" style="">
-      <div class="col-xs-3 v3-header-menu" style="display: none;">
-        <i class="pvi-icon_Menu" style="margin: 0px 10px 0px 0px;"></i>Danh mục sản phẩm
+      <div class="container text-right">
+        <div class="col-xs-3 v3-header-menu" style="display: none;">
+          <i class="pvi-icon_Menu" style="margin: 0px 10px 0px 0px;"></i>Danh mục sản phẩm
 
+        </div>
+
+        <div class="v3-header-navigation-item recently-product-item header-navigation-recently-products">
+          <i class="fa fa-angle-down"></i>
+          Sản phẩm vừa xem
+        </div>
+        <a class="v3-header-navigation-item header-navigation-showroom" href="https://phongvu.vn/contact/">
+          <i class="pvi-icon_Showroom"></i>
+          Hệ thống Showroom
+        </a>
+        <a class="v3-header-navigation-item header-navigation-contact" href="tel:19001835">
+          <i class="pvi-icon_Contact"></i>
+          1900 1835
+        </a>
+        <a class="v3-header-navigation-item header-navigation-tracking-warranty" data-toggle="modal"
+           data-target="#trackingWarrantyModal">
+          <i class="pvi-icon_Warranty1"></i>
+          Kiểm tra bảo hành
+        </a>
+        <div class="v3-header-navigation-item bell-item header-navigation-notification">
+          <span class="v3-notification-count" style="display: inline;">6</span>
+          <i class="pvi-icon_Bell"></i>
+          Thông báo
+          <i class="fa fa-angle-down bell-down-icon"></i>
+
+        </div>
+        <a class="v3-header-navigation-item header-navigation-buildpc" href="https://phongvu.vn/buildpc/">
+          <i class="pvi-icon_BuildPC"></i>
+          Xây dựng cấu hình
+        </a>
+
+        <a class="v3-header-navigation-item header-navigation-fb-chat">
+          <i class="pvi-icon_Chat"></i>
+          Tư vấn mua hàng
+        </a>
       </div>
-
-      <div class="v3-header-navigation-item recently-product-item header-navigation-recently-products">
-        <i class="fa fa-angle-down"></i>
-        Sản phẩm vừa xem
-      </div>
-      <a class="v3-header-navigation-item header-navigation-showroom" href="https://phongvu.vn/contact/">
-        <i class="pvi-icon_Showroom"></i>
-        Hệ thống Showroom
-      </a>
-      <a class="v3-header-navigation-item header-navigation-contact" href="tel:19001835">
-        <i class="pvi-icon_Contact"></i>
-        1900 1835
-      </a>
-      <a class="v3-header-navigation-item header-navigation-tracking-warranty" data-toggle="modal"
-         data-target="#trackingWarrantyModal">
-        <i class="pvi-icon_Warranty1"></i>
-        Kiểm tra bảo hành
-      </a>
-      <div class="v3-header-navigation-item bell-item header-navigation-notification">
-        <span class="v3-notification-count" style="display: inline;">6</span>
-        <i class="pvi-icon_Bell"></i>
-        Thông báo
-        <i class="fa fa-angle-down bell-down-icon"></i>
-
-      </div>
-      <a class="v3-header-navigation-item header-navigation-buildpc" href="https://phongvu.vn/buildpc/">
-        <i class="pvi-icon_BuildPC"></i>
-        Xây dựng cấu hình
-      </a>
-
-      <a class="v3-header-navigation-item header-navigation-fb-chat">
-        <i class="pvi-icon_Chat"></i>
-        Tư vấn mua hàng
-      </a>
     </div>
+    <transition name="loginModal">
+      <login-modal v-if="showLoginModal" @close="showLoginModal = false"></login-modal>
+    </transition>
   </div>
 </template>
+<script>
+  import LoginModal from "./LoginModal";
+
+  export default {
+    data() {
+      return {
+        showLoginModal: false,
+      }
+    },
+    components: {
+      'login-modal': LoginModal,
+    }
+  }
+</script>
 <style>
   .navbar-brand {
     width: 45px;
@@ -204,9 +237,11 @@
   .dropdown:hover > .dropdown-menu {
     display: block;
   }
-  #megamenu-nav-main{
+
+  #megamenu-nav-main {
     z-index: 1201;
   }
+
   .dropdown > .dropdown-toggle:active {
     /*Without this, clicking will make it sticky*/
     pointer-events: none;
@@ -251,5 +286,35 @@
     width: 100%;
     padding-left: 24px;
     padding-right: 24px;
+  }
+
+  .loginModal-enter {
+    opacity: 0;
+  }
+
+  .loginModal-leave-active {
+    opacity: 0;
+  }
+
+  .loginModal-enter .loginModal-container,
+  .loginModal-leave-active .loginModal-container {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+
+  .v3-header-sale {
+
+  }
+
+  .v3-header-tracking-order {
+    padding-left: 40px;
+  }
+
+  .v3-header-login {
+    color: #fff;
+  }
+
+  .v3-header-cart {
+
   }
 </style>
