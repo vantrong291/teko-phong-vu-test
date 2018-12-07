@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-# phongvu-online
 
 > A Vue.js project
 
@@ -20,7 +18,7 @@ npm run build --report
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
-=======
+
 # phongvu-desktop-frontend
 
->>>>>>> ae8f8dc851c8cf50aceddfd386c79e3eb2cca869
+
